@@ -1,0 +1,19 @@
+.DS_Store
+platforms/*
+!platforms/README.md
+plugins/*
+!plugins/README.md
+res
+!www/res
+*.zip
+dist
+pwa
+node_modules
+package-lock.json
+
+# IDE Files
+#-------------------------
+.idea/*
+.vscode/*
+typings/*
+jsconfig.json
