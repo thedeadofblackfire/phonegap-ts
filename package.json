@@ -1,0 +1,66 @@
+{
+    "name": "Live Chat",
+    "version": "1.1.0",
+    "author": "WebCreators",
+    "main": "gulpfile.js",
+    "scripts": {
+        "start": "gulp",
+        "production": "gulp --production",
+        "zip": "rm www.zip && 7z a -tzip www.zip www && 7z a -tzip www.zip config.xml"
+    },
+    "devDependencies": {
+        "del": "^2.2.0",
+        "grunt-contrib-compress": "^1.4.3",
+        "grunt-contrib-uglify": "^3.0.1",
+        "gulp": "^3.9.0",
+        "gulp-clean-css": "^3.5.0",
+        "gulp-delete-lines": "0.0.7",
+        "gulp-if": "^2.0.2",
+        "gulp-imagemin": "^4.0.0",
+        "gulp-phonegap-build": "git+https://github.com/thedeadofblackfire/gulp-phonegap-build.git#master",
+        "gulp-preprocess": "^2.0.0",
+        "gulp-remove-code": "^1.0.2",
+        "gulp-rename": "^1.2.2",
+        "gulp-uglify": "^3.0.0",
+        "gulp-useref": "^3.1.2",
+        "uglify-es": "^3.1.8",
+        "pump": "^1.0.2",
+        "yargs": "^10.0.3",
+        "workbox-build": "^2.1.1"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-dialogs": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-network-information": {},
+            "cordova-plugin-globalization": {},
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-media": {},
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-vibration": {},
+            "cordova-plugin-whitelist": {},
+            "phonegap-plugin-push": {},
+            "cordova-plugin-file": {}
+        },
+        "platforms": [
+            "browser"
+        ]
+    },
+    "dependencies": {
+        "cordova-browser": "5.0.1",
+        "cordova-plugin-compat": "1.2.0",
+        "cordova-plugin-device": "1.1.7",
+        "cordova-plugin-dialogs": "1.3.4",
+        "cordova-plugin-file": "4.3.3",
+        "cordova-plugin-globalization": "1.0.8",
+        "cordova-plugin-inappbrowser": "1.7.2",
+        "cordova-plugin-media": "3.0.1",
+        "cordova-plugin-network-information": "1.3.4",
+        "cordova-plugin-splashscreen": "4.1.0",
+        "cordova-plugin-statusbar": "2.3.0",
+        "cordova-plugin-vibration": "2.1.6",
+        "cordova-plugin-whitelist": "1.3.3",
+        "phonegap-plugin-push": "2.0.0"
+    }
+}
