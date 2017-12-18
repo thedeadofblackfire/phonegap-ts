@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="with-statusbar-overlay">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -14,18 +14,15 @@
     <link rel="stylesheet" href="css/my-app.css">    
   </head>
   <body>
-    <div class="statusbar-overlay"></div>
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
+    <div class="statusbar"></div>
+	<div class="panel panel-left panel-reveal">   
       <div class="content-block">
-        <p><center><a href="#" class="button button-cancel close-panel" data-i18n="label.closepanel">label.closepanel</a></center></p>
+        <p><center><a href="#" class="button button-cancel panel-close" data-i18n="label.closepanel">label.closepanel</a></center></p>
       </div> 
       <div class="content-block-title title_bluexxx">Active chats</div>
       <div class="list-block">
         <ul id="panel_userlist">
-          <li><a href="modals.html" class="close-panel item-link">
+          <li><a href="modals.html" class="panel-close item-link">
               <div class="item-content">
                 <div class="item-media"><i class="icon icon-f7"></i></div>
                 <div class="item-inner">
@@ -40,7 +37,6 @@
         
       </div>
       
-      <!--<div class="content-block-title title_bluexxx">More</div>-->
         <div class="list-block">
         <ul>
                       
@@ -72,6 +68,79 @@
       <div class="content-block" id="panelvisitor">     
       </div>
     </div>
+	<div class="view view-main view-init ios-edges" data-url="/">
+	
+	<div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+            <a href="#" class="link back">
+              <i class="icon icon-back"></i>
+              <span class="ios-only">Back</span>
+            </a>
+          </div>
+        <div class="title" id="nickname" xstyle="color:#007AFF;">Live Chat</div>
+        <div class="right md-only">
+          <a class="link panel-open" @click="toggleToolbarPosition">
+            <i class="icon material-icons rotate-icon">compare_arrows</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar tabbar tabbar-labels toolbar-bottom-md">
+      <div class="toolbar-inner">
+        <a href="#tab-1" class="tab-link tab-link-active">
+          <i class="icon f7-icons ios-only">email</i>
+          <!--<i class="icon icon-fill f7-icons ios-only">email_fill</i>-->
+          <i class="icon material-icons md-only">email</i>
+          <span class="tabbar-label" data-i18n="label.visitors">label.visitors</span>
+        </a>
+        <a href="#tab-2" class="tab-link">
+          <i class="icon f7-icons ios-only">today<span class="badge color-red">5</span></i>
+          <!--<i class="icon icon-fill f7-icons ios-only">today_fill<span class="badge color-red">5</span></i>-->
+          <i class="icon material-icons md-only">today<span class="badge color-red">5</span></i>
+          <span class="tabbar-label" data-i18n="label.archives">label.archives</span>
+        </a>
+        <a href="#tab-3" class="tab-link">
+          <i class="icon f7-icons ios-only">cloud</i>
+          <!--<i class="icon icon-fill f7-icons ios-only">cloud_fill</i>-->
+          <i class="icon material-icons md-only">file_upload</i>
+          <span class="tabbar-label" data-i18n="label.settings">label.settings</span>
+        </a>
+      </div>
+    </div>
+    <div class="tabs">
+      <div id="tab-1" class="page-content tab tab-active">
+        <div class="block">
+          <p><b>Tab 1 content</b></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam enim quia molestiae facilis laudantium voluptates obcaecati officia cum, sit libero commodi. Ratione illo suscipit temporibus sequi iure ad laboriosam accusamus?</p>
+         <p>Deserunt adipisci tempora asperiores, quo, nisi ex delectus vitae consectetur iste fugiat iusto dolorem autem. Itaque, ipsa voluptas, a assumenda rem, dolorum porro accusantium, officiis veniam nostrum cum cumque impedit.</p>
+          <p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p>
+        </div>
+      </div>
+      <div id="tab-2" class="page-content tab">
+        <div class="block">
+          <p><b>Tab 2 content</b></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam enim quia molestiae facilis laudantium voluptates obcaecati officia cum, sit libero commodi. Ratione illo suscipit temporibus sequi iure ad laboriosam accusamus?</p>
+			<p>Deserunt adipisci tempora asperiores, quo, nisi ex delectus vitae consectetur iste fugiat iusto dolorem autem. Itaque, ipsa voluptas, a assumenda rem, dolorum porro accusantium, officiis veniam nostrum cum cumque impedit.</p>
+          <p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p>
+        </div>
+      </div>
+      <div id="tab-3" class="page-content tab">
+        <div class="block">
+          <p><b>Tab 3 content</b></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam enim quia molestiae facilis laudantium voluptates obcaecati officia cum, sit libero commodi. Ratione illo suscipit temporibus sequi iure ad laboriosam accusamus?</p>
+			<p>Deserunt adipisci tempora asperiores, quo, nisi ex delectus vitae consectetur iste fugiat iusto dolorem autem. Itaque, ipsa voluptas, a assumenda rem, dolorum porro accusantium, officiis veniam nostrum cum cumque impedit.</p>
+          <p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+	</div>
+	
+	
+	
     <!-- Views-->
     <div class="views">
       <!-- Your main view, should have "view-main" class-->
@@ -95,7 +164,6 @@
                 <a href="#tab-2" class="tab-link"><i id="badgetotalvisitors" class="icon ks-tabbar-icon-1"></i><span class="tabbar-label" data-i18n="label.visitors">label.visitors</span></a>
                 <a href="#tab-archives" class="tab-link"><i class="icon ks-tabbar-icon-2"></i> <span class="tabbar-label" data-i18n="label.archives">label.archives</span></a>
                 <a href="#tab-3" class="tab-link"><i class="icon ks-tabbar-icon-3"></i><span class="tabbar-label" data-i18n="label.settings">label.settings</span></a>
-                 <!--<a href="#tab-3" class="tab-link"><i class="iconx size-32 ion-ios7-chatbubble-outline"></i> <span class="tabbar-label" data-i18n="label.chats">label.chats</span></a>--->
               </div>
             </div>     
             <!-- Scrollable page content-->
@@ -111,51 +179,9 @@
         </div>
         <div id="tab-2" class="tab">
           <div class="content-block">
-            <!--<p>Active Visitors: <span class="totalvisitors">0</span></p>           -->
-            <!--<a href="#" class="open-panel">Left panel</a>-->
-            
-            <!--
-            <div class="content-block-title">Chatting (2)</div>
-            <div class="list-block">
-        <ul>
-          <li><a href="#" class="item-link item-content">
-              <div class="item-inner">
-                <div class="item-title">Ivan Petrov</div>
-              </div></a></li>
-          <li><a href="#" class="item-link item-content">
-              <div class="item-inner">
-                <div class="item-title">John Doe</div>
-              </div></a></li> 
-        </ul>
-      </div>
-      -->
-      
-      <div id="container_visitor_list"></div>
      
-<!--
- <div class="content-block-title">Browsing (8)</div>
-      <div class="list-block">
-        <ul>
-
-              <li>
-            <div class="item-content">
-              <div class="item-media"><img src="img/browser/64/Firefox.png" width="32"></div>       
-              <div class="item-inner">
-                <div class="item-title">
-                197.124.236.123
-                <br><img src="img/country/64/fr.png" width="16"> Lille, France
-                <br>http://robotik
-                </div>     
-                   <p>5:12</p>
-              </div>
-           
-            </div>
-          </li>
-                
-        </ul>
-      </div>
--->      
-            
+			<div id="container_visitor_list"></div>
+                     
             <ul id="app-status-ul"></ul>
           </div>
         </div>
@@ -236,46 +262,32 @@
       </div>
    
    </div>
-    
-    <div class="popover popover-menu">
-      <div class="popover-angle"></div>
-      <div class="popover-inner">
-        <div class="list-block" id="popovervisitor">
-          <ul>
-            <li><a href="modals.html" class="list-button item-link">Modals</a></li>
-            <li><a href="popover.html" class="list-button item-link">Popover</a></li>
-            <li><a href="tabs.html" class="list-button item-link">Tabs</a></li>
-            <li><a href="panels.html" class="list-button item-link">Side Panels</a></li>
-            <li><a href="list-view.html" class="list-button item-link">List View</a></li>
-            <li><a href="forms.html" class="list-button item-link">Forms</a></li>
-          </ul>
-        </div>               
-      </div>
-    </div>
-    
+        
     <div class="play"></div>
-    
-    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script> 
-    <script type="text/javascript" charset="utf-8" src="js/framework7.min.js"></script>    
-    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>        
-    <script type="text/javascript" charset="utf-8" src="js/i18next-1.7.2.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/ln.js"></script>   
-    
+	
+    <script type="text/javascript" charset="utf-8" src="js/settings.js"></script>
+	<!--removeIf(pwa)-->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+	<!--endRemoveIf(pwa)-->
+    <script type="text/javascript" charset="utf-8" src="js/lib/framework7.min.js"></script>    
+    <script type="text/javascript" charset="utf-8" src="js/lib/jquery.min.js"></script>        
+    <script type="text/javascript" charset="utf-8" src="js/lib/i18next-1.7.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib/ln.js"></script>   
+    			
+	<!-- build:js js/app.min.js -->			
+	<script type="text/javascript" charset="utf-8" src="js/app/routes.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/app/app.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/app/app.push.js"></script>			
+
     <script type="text/javascript" charset="utf-8" src="js/textsol.js"></script>		             
     <script type="text/javascript" charset="utf-8" src="js/textsol.chat.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/textsol.impush.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/textsol.push.js"></script>    
-         
-    <script type="text/javascript" charset="utf-8">     		
-            var updateStatusBar = navigator.userAgent.match(/iphone|ipad|ipod/i) &&
-            parseInt(navigator.appVersion.match(/OS (\d)/)[1], 10) >= 7;
-	
-            if (updateStatusBar) {
-                //document.body.style.webkitTransform = 'translate3d(0, 20px, 0)';
-                document.body.style.marginTop = '20px';
-            }
-			
-            app.initialize();
+	<!-- endbuild -->
+	  
+    <script type="text/javascript" charset="utf-8">  
+
+        app.initialize();
                         
     </script>    
   </body>
