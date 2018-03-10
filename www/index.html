@@ -21,12 +21,12 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
       <div class="content-block">
-        <p><center><a href="#" class="button button-cancel close-panel" data-i18n="label.closepanel">label.closepanel</a></center></p>
+        <p><center><a href="#" class="button button-cancel panel-close" data-i18n="label.closepanel">label.closepanel</a></center></p>
       </div> 
       <div class="content-block-title title_bluexxx">Active chats</div>
       <div class="list-block">
         <ul id="panel_userlist">
-          <li><a href="modals.html" class="close-panel item-link">
+          <li><a href="modals.html" class="panel-close item-link">
               <div class="item-content">
                 <div class="item-media"><i class="icon icon-f7"></i></div>
                 <div class="item-inner">
@@ -72,6 +72,83 @@
       <div class="content-block" id="panelvisitor">     
       </div>
     </div>
+	<div class="view view-main view-init ios-edges" data-url="/">
+	
+	<div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+            <a href="#" class="link back">
+              <i class="icon icon-back"></i>
+              <span class="ios-only">Back</span>
+            </a>
+          </div>
+        <div class="title" id="nickname" xstyle="color:#007AFF;">Live Chat</div>
+        <div class="right md-only">
+          <a class="link panel-open" @click="toggleToolbarPosition">
+            <i class="icon material-icons rotate-icon">compare_arrows</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar tabbar tabbar-labels toolbar-bottom-md">
+      <div class="toolbar-inner">
+		<a href="#tab-1" class="tab-link tab-link-active">
+          <i class="icon f7-icons ios-only">today<span class="badge color-red">5</span></i>
+          <!--<i class="icon icon-fill f7-icons ios-only">email_fill</i>-->
+          <i class="icon material-icons md-only">today<span class="badge color-red">5</span></i
+          <span class="tabbar-label" data-i18n="label.visitors">label.visitors</span>
+        </a>
+        <a href="#tab-1" class="tab-link tab-link-active">
+          <i class="icon f7-icons ios-only">today<span class="badge color-red">5</span></i>
+          <!--<i class="icon icon-fill f7-icons ios-only">email_fill</i>-->
+          <i class="icon material-icons md-only">today<span class="badge color-red">5</span></i
+          <span class="tabbar-label" data-i18n="label.visitors">label.visitors</span>
+        </a>
+        <a href="#tab-2" class="tab-link">
+          <i class="icon f7-icons ios-only">today<span class="badge color-red">5</span></i>
+          <!--<i class="icon icon-fill f7-icons ios-only">today_fill<span class="badge color-red">5</span></i>-->
+          <i class="icon material-icons md-only">today<span class="badge color-red">5</span></i>
+          <span class="tabbar-label" data-i18n="label.archives">label.archives</span>
+        </a>
+        <a href="#tab-3" class="tab-link">
+          <i class="icon f7-icons ios-only">cloud</i>
+          <!--<i class="icon icon-fill f7-icons ios-only">cloud_fill</i>-->
+          <i class="icon material-icons md-only">file_upload</i>
+          <span class="tabbar-label" data-i18n="label.settings">label.settings</span>
+        </a>
+      </div>
+    </div>
+    <div class="tabs">
+      <div id="tab-1" class="page-content tab tab-active">
+        <div class="block">
+          <p><b>Tab 1 content</b></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam enim quia molestiae facilis laudantium voluptates obcaecati officia cum, sit libero commodi. Ratione illo suscipit temporibus sequi iure ad laboriosam accusamus?</p>
+         <p>Deserunt adipisci tempora asperiores, quo, nisi ex delectus vitae consectetur iste fugiat iusto dolorem autem. Itaque, ipsa voluptas, a assumenda rem, dolorum porro accusantium, officiis veniam nostrum cum cumque impedit.</p>
+          <p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p>
+        </div>
+      </div>
+      <div id="tab-2" class="page-content tab">
+        <div class="block">
+          <p><b>Tab 2 content</b></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam enim quia molestiae facilis laudantium voluptates obcaecati officia cum, sit libero commodi. Ratione illo suscipit temporibus sequi iure ad laboriosam accusamus?</p>
+		<p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p>
+        </div>
+      </div>
+      <div id="tab-3" class="page-content tab">
+        <div class="block">
+          <p><b>Tab 3 content</b></p>
+          <p>Deserunt adipisci tempora asperiores, quo, nisi ex delectus vitae consectetur iste fugiat iusto dolorem autem. Itaque, ipsa voluptas, a assumenda rem, dolorum porro accusantium, officiis veniam nostrum cum cumque impedit.</p>
+          <p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+	</div>
+	
+	
+	
     <!-- Views-->
     <div class="views">
       <!-- Your main view, should have "view-main" class-->
@@ -95,7 +172,6 @@
                 <a href="#tab-2" class="tab-link"><i id="badgetotalvisitors" class="icon ks-tabbar-icon-1"></i><span class="tabbar-label" data-i18n="label.visitors">label.visitors</span></a>
                 <a href="#tab-archives" class="tab-link"><i class="icon ks-tabbar-icon-2"></i> <span class="tabbar-label" data-i18n="label.archives">label.archives</span></a>
                 <a href="#tab-3" class="tab-link"><i class="icon ks-tabbar-icon-3"></i><span class="tabbar-label" data-i18n="label.settings">label.settings</span></a>
-                 <!--<a href="#tab-3" class="tab-link"><i class="iconx size-32 ion-ios7-chatbubble-outline"></i> <span class="tabbar-label" data-i18n="label.chats">label.chats</span></a>--->
               </div>
             </div>     
             <!-- Scrollable page content-->
@@ -111,11 +187,8 @@
         </div>
         <div id="tab-2" class="tab">
           <div class="content-block">
-   
       
       <div id="container_visitor_list"></div>
-    
-            
             <ul id="app-status-ul"></ul>
           </div>
         </div>
@@ -202,18 +275,25 @@
     </div>
 	
 	<script type="text/javascript" charset="utf-8" src="js/settings.js"></script>
+	<!--removeIf(pwa)-->
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<!--endRemoveIf(pwa)-->
     <script type="text/javascript" charset="utf-8" src="js/lib/framework7.min.js"></script>    
 	<script type="text/javascript" charset="utf-8" src="js/lib/fwk.js"></script> 
     <script type="text/javascript" charset="utf-8" src="js/lib/jquery.min.js"></script>        
     <script type="text/javascript" charset="utf-8" src="js/lib/i18next-1.7.2.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/lib/ln.js"></script>   
     
-	<script type="text/javascript" charset="utf-8" src="js/app/routes.js"></script>	
+	<!-- build:js js/app.min.js -->			
+	<script type="text/javascript" charset="utf-8" src="js/app/routes.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/app/app.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/app/app.push.js"></script>			
+
     <script type="text/javascript" charset="utf-8" src="js/app/textsol.js"></script>		             
     <script type="text/javascript" charset="utf-8" src="js/app/textsol.chat.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/app/textsol.impush.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/app/textsol.push.js"></script>    
+    <script type="text/javascript" charset="utf-8" src="js/app/textsol.push.js"></script>
+	<!-- endbuild -->    
          
     <script type="text/javascript" charset="utf-8">     		
 
