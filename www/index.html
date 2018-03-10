@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="with-statusbar-overlay">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>Live Chat</title>
-    <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="css/framework7.min.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/my-app.css">    
-  </head>
+<html>
+    <head>		
+        <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#008DC0" />
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">		        
+        <title>Live Chat</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="manifest" href="manifest.json">					
+		<link rel="stylesheet" type="text/css" href="css/framework7.min.css">	
+		<link rel="stylesheet" type="text/css" href="css/ionicons.min.css">		
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="fonts/material-icons.css">	
+		<link rel="stylesheet" href="css/app.css" type="text/css">
+    </head>	
   <body>
-    <div class="statusbar-overlay"></div>
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
+  <div id="app">
+    <div class="statusbar"></div>
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
       <div class="content-block">
@@ -40,7 +41,6 @@
         
       </div>
       
-      <!--<div class="content-block-title title_bluexxx">More</div>-->
         <div class="list-block">
         <ul>
                       
@@ -111,50 +111,10 @@
         </div>
         <div id="tab-2" class="tab">
           <div class="content-block">
-            <!--<p>Active Visitors: <span class="totalvisitors">0</span></p>           -->
-            <!--<a href="#" class="open-panel">Left panel</a>-->
-            
-            <!--
-            <div class="content-block-title">Chatting (2)</div>
-            <div class="list-block">
-        <ul>
-          <li><a href="#" class="item-link item-content">
-              <div class="item-inner">
-                <div class="item-title">Ivan Petrov</div>
-              </div></a></li>
-          <li><a href="#" class="item-link item-content">
-              <div class="item-inner">
-                <div class="item-title">John Doe</div>
-              </div></a></li> 
-        </ul>
-      </div>
-      -->
+   
       
       <div id="container_visitor_list"></div>
-     
-<!--
- <div class="content-block-title">Browsing (8)</div>
-      <div class="list-block">
-        <ul>
-
-              <li>
-            <div class="item-content">
-              <div class="item-media"><img src="img/browser/64/Firefox.png" width="32"></div>       
-              <div class="item-inner">
-                <div class="item-title">
-                197.124.236.123
-                <br><img src="img/country/64/fr.png" width="16"> Lille, France
-                <br>http://robotik
-                </div>     
-                   <p>5:12</p>
-              </div>
-           
-            </div>
-          </li>
-                
-        </ul>
-      </div>
--->      
+    
             
             <ul id="app-status-ul"></ul>
           </div>
@@ -236,46 +196,28 @@
       </div>
    
    </div>
-    
-    <div class="popover popover-menu">
-      <div class="popover-angle"></div>
-      <div class="popover-inner">
-        <div class="list-block" id="popovervisitor">
-          <ul>
-            <li><a href="modals.html" class="list-button item-link">Modals</a></li>
-            <li><a href="popover.html" class="list-button item-link">Popover</a></li>
-            <li><a href="tabs.html" class="list-button item-link">Tabs</a></li>
-            <li><a href="panels.html" class="list-button item-link">Side Panels</a></li>
-            <li><a href="list-view.html" class="list-button item-link">List View</a></li>
-            <li><a href="forms.html" class="list-button item-link">Forms</a></li>
-          </ul>
-        </div>               
-      </div>
-    </div>
+
     
     <div class="play"></div>
+    </div>
+	
+	<script type="text/javascript" charset="utf-8" src="js/settings.js"></script>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib/framework7.min.js"></script>    
+	<script type="text/javascript" charset="utf-8" src="js/lib/fwk.js"></script> 
+    <script type="text/javascript" charset="utf-8" src="js/lib/jquery.min.js"></script>        
+    <script type="text/javascript" charset="utf-8" src="js/lib/i18next-1.7.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib/ln.js"></script>   
     
-    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script> 
-    <script type="text/javascript" charset="utf-8" src="js/framework7.min.js"></script>    
-    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>        
-    <script type="text/javascript" charset="utf-8" src="js/i18next-1.7.2.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/ln.js"></script>   
-    
-    <script type="text/javascript" charset="utf-8" src="js/textsol.js"></script>		             
-    <script type="text/javascript" charset="utf-8" src="js/textsol.chat.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/textsol.impush.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/textsol.push.js"></script>    
+	<script type="text/javascript" charset="utf-8" src="js/app/routes.js"></script>	
+    <script type="text/javascript" charset="utf-8" src="js/app/textsol.js"></script>		             
+    <script type="text/javascript" charset="utf-8" src="js/app/textsol.chat.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app/textsol.impush.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app/textsol.push.js"></script>    
          
     <script type="text/javascript" charset="utf-8">     		
-            var updateStatusBar = navigator.userAgent.match(/iphone|ipad|ipod/i) &&
-            parseInt(navigator.appVersion.match(/OS (\d)/)[1], 10) >= 7;
-	
-            if (updateStatusBar) {
-                //document.body.style.webkitTransform = 'translate3d(0, 20px, 0)';
-                document.body.style.marginTop = '20px';
-            }
-			
-            app.initialize();
+
+        app.initialize();
                         
     </script>    
   </body>

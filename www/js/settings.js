@@ -1,0 +1,21 @@
+var app_settings = {  
+	'platform': 'Android',
+	'platform_both': false,
+	'force_firebase_robo': false,
+	'package_name': 'Dynamoove',
+	'package_id': 'fr.dynacare.dynamoove',
+	'push_app': 'dynamoove',
+    'push_senderID': '753736220538',
+	'api_url': 'https://api.dynamoove.com/v1',
+	'api_url_staging': 'https://staging-api.dynamoove.com/v1',	
+	'api_url_testing': 'http://api-dynamoove.waigeo-test.fr/v1',
+	'api_url_dev': 'http://api.dynamoove.local/v1',	
+	//'api_url_dev': 'http://api-dynamoove.waigeo-test.fr/v1',	
+	'stripe_key': 'pk_test_wlFyJoYpxtj0nvwaZMCTeTuR',
+	'env': 'production',
+	//'env': 'staging',
+	//'env': 'dev',
+	'version': '1.2.0',
+    'build': "570",
+    'release_time': '2018.02.27 11:00'
+};

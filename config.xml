@@ -8,9 +8,9 @@
         Blastis Corp
     </author>
     <content src="index.html" />
-    <preference name="phonegap-version" value="cli-7.0.1" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
     <preference name="orientation" value="portrait" />
-    <preference name="FullScreen" value="true" />
+    <preference name="fullScreen" value="true" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="target-device" value="universal" />
     <preference name="prerendered-icon" value="false" />
