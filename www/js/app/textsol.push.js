@@ -18,18 +18,7 @@
 						// call this to get a new token each time. don't call it to reuse existing token.						
 						e.preventDefault();
                         //pushNotification.unregister(successHandler, errorHandler);
-                        
-                        /*
-                        ImPush.userId = objUser.user_id;
-                        ImPush.operatorId = objUser.operator_id;
-                        ImPush.appCode = "539F5-D40CA";
-                        ImPush.unregister(function(data) {                        
-                            traceHandler("ImPush unregister success: " + JSON.stringify(data));
-                        }, function(errorregistration) {
-                            alert("Couldn't unregister with ImPush" +  errorregistration);
-                        });
-                        */
-                    
+             
                         ImPush.sendAppClose();
 						navigator.app.exitApp();
 					}
@@ -107,18 +96,7 @@
                              ImPush.sendAppOpen();
                          }, function(errorregistration) {
                              alert("Couldn't register with ImPush" +  errorregistration);
-                         });
-                         /*
-                         PushWoosh.appCode = "539F5-D40CA";
-                         PushWoosh.register(e.regid, function(data) {
-                             console.log("PushWoosh register success: " + JSON.stringify(data));
-                             traceHandler("PushWoosh register success: " + JSON.stringify(data));
-                             
-                             PushWoosh.sendAppOpen();
-                         }, function(errorregistration) {
-                             alert("Couldn't register with PushWoosh" +  errorregistration);
-                         });
-                         */
+                         });                       
 					}
                     break;
                     
@@ -174,16 +152,7 @@
                     }, function(errorregistration) {
                         alert("Couldn't register with ImPush" +  errorregistration);
                     });
-                    
-                /*
-                PushWoosh.appCode = "539F5-D40CA";
-                PushWoosh.register(result, function(data) {
-                        console.log("PushWoosh register success: " + JSON.stringify(data));
-                        traceHandler("PushWoosh register success: " + JSON.stringify(data));
-                    }, function(errorregistration) {
-                        alert("Couldn't register with PushWoosh" +  errorregistration);
-                    });
-                */
+            
             }
 			
             function successHandler (result) {

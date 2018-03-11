@@ -169,69 +169,6 @@ app.util.getDateUTC = function(strDate) {
 	return new Date(1900 + date.getYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds());
 }
 
-/*
-app.util.getFormatedScheduleFromDay = function(daySchedule, dayNumber, scheduleFromGoogle) {
-	if (scheduleFromGoogle) {
-		dayNumber += 1;
-		if (dayNumber > 6) dayNumber = 0;
-		var str = 'Fermé';
-		for (let i in daySchedule) {
-			if (daySchedule[i].open.day == dayNumber) {
-				var openTime = String(daySchedule[i].open.time);
-				var openTimeFormated = openTime.slice(0, 2) + 'H' + openTime.slice(2);
-				str === 'Fermé' ? str = openTimeFormated : str += ' - ' + openTimeFormated;
-				if (daySchedule[i].close.day == dayNumber) {
-					var closeTime = String(daySchedule[i].close.time);
-					var closeTimeFormated = closeTime.slice(0, 2) + 'H' + closeTime.slice(2);
-					str += ' à ' + closeTimeFormated;
-				}
-			}
-		}
-		return str;
-	} else {
-		var str = 'Fermé';
-		if (daySchedule[dayNumber].morningStart) {
-			str = app.util.getTimeFromSeconds(daySchedule[dayNumber].morningStart);
-			if (daySchedule[dayNumber].morningEnd) {
-				str += ' à ' + app.util.getTimeFromSeconds(daySchedule[dayNumber].morningEnd);
-			}
-		}
-		var str2 = 'Fermé';
-		if (daySchedule[dayNumber].afternoonStart) {
-			str2 = app.util.getTimeFromSeconds(daySchedule[dayNumber].afternoonStart);
-			if (daySchedule[dayNumber].afternoonEnd) {
-				str2 += ' à ' + app.util.getTimeFromSeconds(daySchedule[dayNumber].afternoonEnd);
-			}
-		}
-		if (str != str2) {
-			str += ' - ' + str2;
-		}
-		return str;
-	}
-}
-*/
-
-app.util.getSchedule = function(schedule) {
-	var daySchedule = {};
-	
-	var moment = new Array('mondayMorningOpeningHour', 'mondayMorningClosingHour', 'mondayAfternoonOpeningHour', 'mondayAfternoonClosingHour',
-	'tuesdayMorningOpeningHour', 'tuesdayMorningClosingHour', 'tuesdayAfternoonOpeningHour', 'tuesdayAfternoonClosingHour',
-	'wednesdayMorningOpeningHour', 'wednesdayMorningClosingHour', 'wednesdayAfternoonOpeningHour', 'wednesdayAfternoonClosingHour',
-	'thursdayMorningOpeningHour', 'thursdayMorningClosingHour', 'thursdayAfternoonOpeningHour', 'thursdayAfternoonClosingHour',
-	'fridayMorningOpeningHour', 'fridayMorningClosingHour', 'fridayAfternoonOpeningHour', 'fridayAfternoonClosingHour',
-	'saturdayMorningOpeningHour', 'saturdayMorningClosingHour', 'saturdayAfternoonOpeningHour', 'saturdayAfternoonClosingHour',
-	'sundayMorningOpeningHour', 'sundayMorningClosingHour', 'sundayAfternoonOpeningHour', 'sundayAfternoonClosingHour');
-	
-	for (var i = 0; i <= 6; i++) {
-		daySchedule[i] = {};
-		daySchedule[i].morningStart = schedule[moment[i * 4]];
-		daySchedule[i].morningEnd = schedule[moment[(i * 4) + 1]];
-		daySchedule[i].afternoonStart = schedule[moment[(i * 4) + 2]];
-		daySchedule[i].afternoonEnd = schedule[moment[(i * 4) + 3]];
-	}
-
-	return daySchedule;
-}
 
 
 app.util.getTimeFromSeconds = function(seconds) {
@@ -299,10 +236,6 @@ app.util.getValue = function(value, defaultValue = 'Non renseigné', separator1 
 	}
 }
 
-app.util.setBackAuthorization = function(value) {
-	app.backContextAuthorized = value;
-}
-
 app.util.dateIsInTheCurrentWeek = function(dateToCompareStart, dateToCompareStop) {
 	var today = new Date();
 	today.setHours(0, 0, 0, 0);
@@ -328,53 +261,4 @@ app.util.dateIsInTheCurrentMonth = function(dateToCompareStart, dateToCompareSto
 	dateToCompareStop = new Date(dateToCompareStop);
 	
 	return today.getMonth() >= dateToCompareStart.getMonth() && today.getMonth() <= dateToCompareStop.getMonth();
-}
-
-/*
-	Compare API version and current API version
-	Return 0 if same version
-	Return 1 if version is bigger than current version
-	Return -1 if version is lower than current version
-*/
-app.util.compareAPIVersion = function(APIVersion) {
-	var currentAPIVersion = app_settings.api_version;
-	if (APIVersion === currentAPIVersion) return 0;
-
-    var APIVersion = APIVersion.split('.');
-    var currentAPIVersion = currentAPIVersion.split('.');
-
-    var minimal = Math.min(APIVersion.length, currentAPIVersion.length);
-
-    for (var i = 0; i < minimal; i++) {
-        if (parseInt(APIVersion[i]) > parseInt(currentAPIVersion[i])) return 1;
-        if (parseInt(APIVersion[i]) < parseInt(currentAPIVersion[i])) return -1;
-    }
-
-    if (APIVersion.length > currentAPIVersion.length) return 1;
-
-    if (APIVersion.length < currentAPIVersion.length) return -1;
-
-    return 0;
-}
-
-app.util.hasMinimalAPIVersionRequired = function(callbackSuccess, callbackFailed) {
-	app.auth.remoteAjax({
-		url: app_settings.api_url + '/version', 
-		method: 'GET',
-		async: false,
-		token: true,
-		cbWin: function(data) {			
-			if (app.util.compareAPIVersion(data) > 0) {
-				if (app.debug) console.log('API version (' + data + ') is too old, update is necessary');
-				if (typeof callbackFailed === 'function') callbackFailed();
-			} else {
-				if (app.debug) console.log('API version (' + data + ') isn\'t too old');
-				if (typeof callbackSuccess === 'function') callbackSuccess();
-			}
-		},
-		cbFail: function(xhr) {
-			if (app.debug) console.log('Can\'t check API minimal version required');
-			if (typeof callbackFailed === 'function') callbackFailed();
-		}
-	});
 }
